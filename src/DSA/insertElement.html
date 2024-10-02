@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert an element</title>
+    <script>
+        console.log("inesert an element at any position of array");
+
+        let data = [12, 34, 2, 65, 74, 14, 78, 33];
+        let el = 90;
+        let position = 3;
+
+        console.log("Array before insert operation :", data);
+
+        for (let i = data.length - 1; i >= 0; i--) {
+            if (i >= position) {
+                data[i + 1] = data[i];
+                console.warn(data[i]);
+                if (i == position) {
+                    data[i] = el;
+                }
+
+            }
+
+
+
+        }
+        console.log(`Array after insertion of element at ${position} position : `)
+        console.warn(data);
+
+        function insertHandler(){
+            console.log("insert button is clicked");
+
+            
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <h1>Welcome to javaScript data structure</h1>
+    <input type="text" id="insertPositon" placeholder="please enter position">
+    <button onClick="insertHandler()">Insert element</button>
+
+</body>
+
+</html>

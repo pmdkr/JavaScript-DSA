@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge two array</title>
+    <script>
+        let arr1 = [23,2,54,13,63,11,83,90];
+        let arr2=[87,26,99,100];
+
+        console.log("Array 1 elements are: ",arr1);
+        console.log("Array 2 elements are:", arr2);
+
+        let arr3=[];
+
+        for(let i=0;i<arr1.length;i++){
+            arr3[i]=arr1[i];
+            // console.warn(arr3[i]);
+        }
+
+        console.log("length of array 3 after inserting arr1 data: ",arr3.length);
+        console.log("Length will be arr3 after operation:", arr1.length+arr2.length);
+        let j=0;
+
+        for(let i=arr1.length;i<arr1.length+arr2.length;i++){
+            arr3[i]=arr2[j];
+            j++;
+        }
+
+        console.log("Array 3 data is : ",arr3);
+
+        
+
+    </script>
+</head>
+<body>
+    <h1>Merge two array into one new array</h1>
+    <h2>Please open developer console to see results.</h2>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete array element</title>
+</head>
+
+<body>
+
+    <h1> welcome to JS</h1>
+    <h2>Delete an array element of given postion - Array interview question</h2>
+    <script>
+        // console.log("hello world!");
+        // let data = [12,34,65,78,34,11,87];
+        // let postion =3;
+        // console.log("Array before delete an element:",data)
+        // for(let i=postion; i<data.length;i++){
+
+        //     data[i]=data[i+1];
+        //     // console.warn(data[i]);
+
+        // }
+        // data.length = data.length-1;
+        // console.log("Array after deletion :", data)
+        // // console.log(data);
+
+
+
+        function deleteHandler() {
+
+            console.log("hello world!");
+            let position = document.getElementById("position").value;
+            position = parseInt(position);
+            let data = [12, 34, 65, 78, 34, 11, 87];
+            // let postion =3;
+            console.log("Array before delete an element:", data)
+            for (let i = position; i < data.length; i++) {
+
+                data[i] = data[i + 1];
+                // console.warn(data[i]);
+
+            }
+            data.length = data.length - 1;
+            console.log("Array after deletion :", data)
+            // console.log(data);
+        }
+
+
+    </script>
+
+
+
+    <input id="position" type="text" placeholder="enter position">
+    <BUtton onclick="deleteHandler()">Delete element</BUtton>
+
+    <input type="range" placeholder=" just to check">
+    <input type="color" name="yellow" id="col">
+    <input type="datetime-local" name="" id="">
+    <input type="file" name="" id="">
+
+</html>

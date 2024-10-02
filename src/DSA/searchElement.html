@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search element</title>
+</head>
+
+<script>
+    // Search element in array 
+
+    // let data=[12,34,35,32,53,2,32,24,63,3,22,55];
+    // let el=32;
+    // let indexOfElement=undefined;
+
+    // for(let i=0;i<=data.length;i++){
+    //     if(data[i]===el){
+    //         indexOfElement=i;
+    //     }
+
+
+
+    // }
+
+    // if(indexOfElement===undefined){
+    //     console.log("element is not found in array")
+
+    // }else{
+    //     console.log(`element is found at : ${indexOfElement} position `);
+    // }
+
+    const searchHandler = () => {
+
+        let el = document.getElementById("element").value;
+        let data = [12, 34, 35, 32, 53, 2, 32, 24, 63, 3, 22, 55];
+        let indexOfElement = undefined;
+
+        for (let i = 0; i < data.length; i++) {
+            if (data[i] === parseInt(el)){
+                indexOfElement = i;
+                break;
+
+            }
+            
+        }
+
+        if(indexOfElement!==undefined){
+            console.log(`element is found at ${indexOfElement} position`);
+        }else{
+            console.log("element not found")
+        }
+    }
+
+
+</script>
+
+<body>
+    <h1>Find element in array </h1>
+
+    
+    <input type="text" name="" id="element" placeholder="Enter a number to serach ">
+    <button onClick="searchHandler()">Search element</button>
+
+    
+
+
+</body>
+
+</html>

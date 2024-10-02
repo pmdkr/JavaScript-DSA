@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge into sorted array</title>
+    <script>
+        let arr1 = [43, 65, 23, 87, 13, 90, 33, 25];
+        let arr2 = [1,500, 98, 44, 62, 100];
+        arr1.sort((a, b) => a - b);
+        arr2.sort((a, b) => a - b);
+
+        let i = 0;
+        let j = 0;
+        console.log("Array 1 data: ", arr1);
+        console.log("Array 2 data: ", arr2);
+
+        let arr3 = [];
+      for(let k = 0; k<arr1.length+arr2.length; k++){
+        if(arr1[i]<arr2[j]){
+            arr3[k]=arr1[i];
+            i++;
+        }else{
+            arr3[k]=arr2[j]
+            j++;
+        }
+      }
+
+        console.log("sorted array is :",arr3)
+
+    </script>
+</head>
+
+<body>
+    <h1>merge into sorted array</h1>
+    
+
+</body>
+
+</html>

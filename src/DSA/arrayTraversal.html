@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traversal</title>
+
+    <script>
+        console.log("Array traveseal one by one");
+
+        let data = [38, 33, 22, 94, 35, 74, 92, 43, 43];
+        // for(let i=0;i<data.length;i++){
+        //     document.write(` Array in ${i} position is ${data[i]} <br>`);
+        // }
+        function fidnHandler() {
+            console.log(" find button is clicked")
+            let el = document.getElementById("element").value;
+            if (el < data.length && typeof parseInt(el) === "number") {
+                alert(data[el]);
+
+            } else {
+                alert("please enter a valid number!");
+            }
+        }
+
+
+    </script>
+</head>
+
+<body style="align-items: center,  center">
+    <h1>Array travseral: </h1>
+
+    <input type="text" name="element" id="element">
+    <button onclick="fidnHandler()">Find element</button>
+
+
+</body>
+
+</html>

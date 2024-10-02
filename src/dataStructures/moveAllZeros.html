@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move zeros to end</title>
+    <script>
+        // solution no 1: 
+        console.log("move all zeros to end of the array: ");
+
+        let data = [2, 5, 34, 0, 33, 76, 0, 1, 82, 0, 65, 99];
+
+        let countZeros = 0;
+
+        console.log("length of the array:", data.length);
+
+        for (let i = 0; i < data.length; i++) {
+            let isZero = data[i] === 0;
+            if (isZero) {
+                countZeros++;
+                data.splice(i, 1);
+                console.log(i);
+                i--;
+            }
+
+        }
+
+        for (let i = 0; i < countZeros; i++) {
+            data.push(0);
+        }
+
+        console.log("Array after move zeros to end is", data);
+
+        // solution no 2:
+
+        // let data = [2, 6, 0, 8, 33, 0, 23, 0, 4, 0, 99];
+        // console.log("Array length before move zeros to end:",data.length);
+
+        // for (let i = 0; i < data.length; i++) {
+        //     data[i] === 0 && data.splice(i, 1) && data.push(0);
+        // }
+        // console.log("Array after move all zeros to end ", data);
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Move all zeros to the end of array </h1>
+
+</body>
+
+</html>

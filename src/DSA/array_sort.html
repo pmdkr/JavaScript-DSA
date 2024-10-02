@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array sort</title>
+    <script>
+
+
+        console.log("sorting the element using double for loop");
+        const data = [3, 6, 84, 12, 43, 22, 65, 98];
+
+
+        console.log("Array elements before the sort the array: ", data);
+
+        for (let i = 0; i < data.length; i++) {
+
+            for (let j = 0; j < data.length; j++) {
+                if (data[j] > data[j + 1]) {
+                    let temp = data[j];
+                    data[j] = data[j + 1];
+                    data[j + 1] = temp;
+                }
+            }
+        }
+
+        console.log("Array elements after sorting :", data);
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Array sort elemens using for loop</h1>
+
+</body>
+
+</html>
