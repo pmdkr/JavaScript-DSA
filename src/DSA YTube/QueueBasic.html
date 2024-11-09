@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic queue</title>
+</head>
+<script>
+    console.log("basic queue impl in JavaScript");
+
+    let data = [];
+    let currentSize = data.length;
+    let maxSize = 5;
+
+    function enqueue(newVal) {
+        console.log("enqueue funtction called");
+        if (currentSize >= maxSize) {
+            console.warn("Queue is full");
+
+
+        } else {
+            data[currentSize] = newVal;
+            currentSize += 1;
+        }
+
+
+    }
+
+    function dequeue() {
+        if (currentSize === 0) {
+            alert("Queue is empty !");
+
+        } else {
+            for (let i = 0; i < currentSize; i++) {
+                data[i] = data[i + 1];
+            }
+            currentSize -= 1;
+            data.length = currentSize;
+        }
+
+    }
+    function display() {
+        for (var i = 0; i < data.length; i++) {
+            console.log(`Queue element at index ${i} is : ${data[i]}`);
+        }
+    }
+    enqueue(11);
+    enqueue(22);
+    enqueue(67);
+    console.warn(data);
+    dequeue();
+    display();
+
+
+</script>
+
+<body>
+    <h1>Queue impl in JavaScript</h1>
+    <h2>Please open developer console to see more output</h2>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue front rear</title>
+    <style>
+        .button {
+            padding: 10px;
+            margin: 10px;
+            border-color: blue;
+        }
+
+        .button>:hover {
+            border-color: blueviolet;
+        }
+    </style>
+</head>
+<script>
+    console.log("basic queue impl in JavaScript");
+
+    let data = [];
+    let currentSize = data.length;
+    let maxSize = 5;
+
+
+    function enqueue() {
+        let newVal = document.getElementById("newEl").value;
+        console.log("enqueue funtction called");
+        if (currentSize >= maxSize) {
+            console.warn("Queue is full");
+
+
+        } else {
+            data[currentSize] = newVal;
+            currentSize += 1;
+        }
+        newVal = document.getElementById("newEl").value = "";
+
+
+    }
+
+    function dequeue() {
+        if (currentSize === 0) {
+            alert("Queue is empty !");
+
+        } else {
+            for (let i = 0; i < currentSize; i++) {
+                data[i] = data[i + 1];
+            }
+            currentSize -= 1;
+            data.length = currentSize;
+        }
+
+
+    }
+    function front() {
+        console.warn(data[0]);
+
+    }
+    function rear() {
+        console.warn(data[currentSize - 1]);
+
+    }
+    function display() {
+        console.log("display function is called! ")
+        for (var i = 0; i < data.length; i++) {
+            console.log(`Queue element at index ${i} is : ${data[i]}`);
+        }
+    }
+    // enqueue(11);
+    // enqueue(22);
+    // enqueue(67);
+    console.warn(data);
+    // dequeue();
+    // display();
+
+
+</script>
+
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h1>Queue impl in JavaScript</h1>
+
+        <input id="newEl" style="margin: 2px 4px; padding: 4px 6px; border: 2px solid black;" type="text"
+            placeholder="enter a number to enqueue" />
+
+        <button class="button" onclick="enqueue()">Insert Element</button>
+        <button class="button" onclick="dequeue()">Delete element</button>
+        <button class="button" onclick="front()">Front element</button>
+        <button class="button" onclick="rear()">Rear of queue</button>
+        <button class="button" onclick="display()">Display element</button>
+
+    </div>
+
+
+</body>
+
+</html>

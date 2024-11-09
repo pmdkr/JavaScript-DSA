@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom Reverse</title>
+    <script>
+        console.log('Reverse the array using recursion..');
+
+        const data = [0, 5, 45, 2, 11, 73, 99];
+        console.log("array before the reverse: ", data);
+        function customReverse(data, start, end) {
+            if (start <= end) {
+
+                let temp = data[start];
+                data[start] = data[end];
+                data[end] = temp;
+                console.warn(data);
+                customReverse(data, start + 1, end - 1);
+
+
+            }
+
+
+        }
+        customReverse(data, 0, data.length - 1)
+    </script>
+</head>
+
+<body>
+
+    <h1>Custom reverse, reverse the array element using recursion.....</h1>
+
+</body>
+
+</html>

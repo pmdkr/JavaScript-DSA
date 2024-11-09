@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StackByButton</title>
+    <script>
+        console.log("stack impl by using button");
+        let data = [];
+        let max = 5;
+        let currentSize = data.length;
+        function push() {
+            console.log("Push funtion is called")
+            let newValue = document.getElementById("newVal").value;
+            
+            if (currentSize > max) {
+                console.warn("stack is full, new element cannot be pushed into stack");
+
+            } else {
+                data[currentSize] = newValue;
+                currentSize += 1;
+                newValue = document.getElementById("newVal").value = "";
+                console.warn(data);
+
+            }
+        }
+        function display() {
+            console.warn("display funtion is called..");
+            for (var i = 0; i < data.length; i++) {
+                console.warn(`stack element at ${i} index: ${data[i]}`);
+            }
+
+        }
+        function pop() {
+            console.warn("pop method is called");
+            if(currentSize>0){
+                currentSize -= 1;
+                data.length=currentSize;
+
+
+            }else{
+                console.warn("Stack is empty....")
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Stack implementation using button </h1>
+    <h2>Please open developer console to see output</h2>
+
+    <input type="text" placeholder="Enter element" id="newVal">
+    <button onclick="push()" class="insert">Insert element</button>
+    <button onclick="pop()" class="delete">delete element</button>
+    <button onClick="display()">Display stack</button>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        console.log("Recursion using JavaScript");
+        let num=5;
+        function fact(n){
+            
+            if(n===0 || n===1){
+                return 1;
+            }
+            return n * fact(n-1);
+            
+        }
+        let output=fact(num);
+        console.log("Factorial of given number is :", output);
+
+    </script>
+</head>
+<body>
+    <h1 style="color: blue;">Recusion in js, lets find factorial of a given no......</h1>
+    
+</body>
+</html>

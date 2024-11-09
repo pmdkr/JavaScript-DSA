@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack impl by class</title>
+    <script>
+        console.log("Stack implementation using class in JavaScript");
+        class Stack {
+            maxSize;
+            currentSize;
+            item = [];
+
+            push(newVal) {
+                if (this.currentSize >= this.maxSize) {
+                    alert("Stack is full");
+                } else {
+                    this.item[this.currentSize] = newVal;
+                    this.currentSize += 1;
+                }
+
+            }  
+            pop() {
+                if (this.currentSize <= 0) {
+                    alert("Stack is empty, Nothing to delete");
+                } else {
+                    this.currentSize -= 1;
+                    this.item.length = this.currentSize;
+
+                }
+
+            }
+            display() {
+                console.log(`Stack elements are ${this.item}`);
+
+            }
+            constructor(size) {
+                console.log("constructor is called..");
+                this.maxSize = size;
+                this.currentSize = this.item.length;
+            }
+        }
+
+        str1 = new Stack(5);
+        str1.push(11);
+        str1.push(23);
+        str1.display();
+
+    </script>
+</head>
+
+<body>
+    <h1>Stack implementation using Class in JavaScript,</h1>
+    <h2> Please go to developer console to see more relevent results..</h2>
+
+</body>
+
+</html>

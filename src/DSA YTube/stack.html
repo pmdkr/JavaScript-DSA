@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack in JavaScript</title>
+    <script>
+        console.log("stack implementation on stack");
+        let data = [];
+        let currentSize = data.length;
+        const max = 5;
+
+        function push(newVal) {
+            if (currentSize >= max) {
+                console.warn("stack is full , new element cannot pushed")
+
+            } else {
+                data[currentSize] = newVal;
+                currentSize += 1;
+
+            }
+
+        }
+        function pop() {
+            if (currentSize > 0) {
+                currentSize -= 1;
+                data.length = currentSize;
+            } else {
+                console.warn("Stack is empty, no element to delete");
+            }
+        }
+        push(22);
+        push(34);
+        push(65);
+        push(77);
+        push(11);
+        console.log("stack element are: ", data);
+        push(99);
+        pop();
+        pop();
+        pop();
+        pop();
+        pop();
+        pop();
+        console.log("lenght of stack is :", data.length);
+
+    </script>
+</head>
+
+<body>
+    <h1>Stack implementation in JavaScript, see developer console for more into it</h1>
+
+</body>
+
+</html>
