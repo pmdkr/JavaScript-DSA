@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log('palindrome string');
+        function checkPalindrome(str1) {
+            console.log(`recived  string parameter is : ${str1}`);
+            let start = 0;
+            let end = str1.length - 1;
+            // console.warn(end);
+
+            while (end>start) {
+                if (str1[start] !== str1[end]) {
+                    return false;
+                }
+                start++;
+                end--;
+
+            }
+            return true;
+
+
+
+        }
+
+        if(checkPalindrome('level')){
+            console.log('string is palindrome');
+
+        }else{
+            console.log('Not a palindrome string!')
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>palindrome string , please open developr console for output</h1>
+
+</body>
+
+</html>

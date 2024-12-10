@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object overview</title>
+    <script>
+        console.log("object overview");
+        const data={
+            firstName:"Pramod",
+            lastName:"Lohra",
+            email:"pramod@gmail.com",
+            getName:function(){
+                return this.firstName;
+            }
+            
+        }
+
+        data.contact=123456;
+        console.warn(data);
+        delete data.firstName;
+        console.warn(data);
+        
+        data.firstName="peter"
+
+        console.warn(data.getName());
+
+        // for(x in data){
+        //     console.warn(data[x]);
+        // }
+
+        // 
+        
+    </script>
+</head>
+<body>
+    <h1>object in js , please open developer console to see output</h1>
+</body>
+</html>

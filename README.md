@@ -14,3 +14,10 @@
 - forEach(function(){}) - takes callback function
 - map()
 - filter()
+
+
+## Data structure in JavaScript YouTube playlist:
+- stack in Js
+- stack with Button
+- stack with Class 
+- 

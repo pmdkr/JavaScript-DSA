@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flatten array</title>
+    <script>
+        console.log('flatten array, converting the multidimensional array into single line array');
+        const arr = [1, 2, [3, 4, 5,], 6, 7, 8, [9, 10, 11, 12], 13];
+        let output = " ";
+
+        function flatten(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                if (Array.isArray(arr[i])) {
+                    //recursive call
+                    flatten(arr[i]);
+
+                } else {
+                    output +=  arr[i];
+                }
+            }
+            return output;
+
+        }
+        console.log(flatten(arr));
+    </script>
+</head>
+
+<body>
+    <h1>Flatten array using recursion...</h1>
+
+</body>
+
+</html>

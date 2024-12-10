@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anagram string</title>
+    <script>
+        console.warn("anagram of a string");
+        function checkAnagram(str1, str2) {
+
+            console.log(`recived parameter is : ${str1} and ${str2}`);
+            let objStr1 = {};
+            if (str1.length === str2.length) {
+                return false;
+            }
+            for (ch of str1) {
+                // console.warn(ch);
+                objStr1[ch] = (objStr1[ch] || 0) + 1;
+
+            }
+            // console.log(objStr1);
+
+            for (ch of str2) {
+                if (!objStr1[ch]) {
+                    return false;
+
+                }
+                objStr1[ch]--;
+
+            }
+            return true;
+
+        }
+        let result = checkAnagram("hello", "ellohh");
+        console.warn(result);
+    </script>
+</head>
+
+<body>
+    <h1>anagram check of a string</h1>
+    <h2>please open developer console for output....</h2>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selection sort</title>
+    <script>
+        // console.log("hoisting in js");
+        // console.log(b);
+        // let a=10;
+        // var b=20;
+        // console.log(a);
+
+        let data = [2, 5, 34, 65, 120, 22, 34, 98, 4, 85, 99];
+        function selectionSort(items) {
+            for (let i = 0; i < items.length; i++) {
+                for (let j = i + 1; j < items.length; j++) {
+                    if (items[i] > items[j]) {
+                        let temp = items[i];
+                        items[i] = items[j];
+                        items[j] = temp;
+                    }
+
+                }
+            }
+            return items;
+
+        }
+        console.log("items before sorting :", data);
+        let result = selectionSort(data);
+        console.warn(`elements after sorting :${result}`);
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Selection sort , please open developer console..</h1>
+
+</body>
+
+</html>

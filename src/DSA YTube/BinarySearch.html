@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log('binary search applied on orderd list only');
+        let data = [5, 7, 9, 14, 17, 22, 56, 67, 90];
+
+        let start = 0;
+        let end = data.length - 1;
+        let position = undefined;
+        let find = 5;
+        console.log(`elements at array are ${data}`);
+        while (start <= end) {
+            let mid = Math.floor((start + end) / 2);
+            // console.log(mid);
+            if (data[mid] === find) {
+                position = mid;
+                break
+
+            } else if (data[mid] < find) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        console.warn(`element found at position ${position}`);
+
+    </script>
+</head>
+
+<body>
+    <h1>Binary serach impl in JS</h1>
+    <h2>please open developer console to see output...</h2>
+
+</body>
+
+</html>

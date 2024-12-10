@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive BinarySearch
+
+    </title>
+    <script>
+        console.log('binary serarch using recursion');
+
+        let data = [2, 4, 6, 8, 12, 23, 34, 56, 66, 78, 99];
+        console.warn("elements for search is : ", data);
+        let find = 12;
+        let positon = null;
+        let start = 0;
+        let end = data.length - 1;
+
+        function recursiveBinarySearch(items, start, end) {
+            let mid = Math.floor((start + end) / 2);
+            // console.warn(data[mid]);
+            if (data[mid] === find) {
+                positon = mid;
+            } else if (find < data[mid]) {
+                end = mid - 1;
+                recursiveBinarySearch(data, start, end);
+            } else {
+                start = mid + 1;
+                recursiveBinarySearch(data, start, end);
+            }
+            return positon;
+
+
+        }
+        let result = recursiveBinarySearch(data, start, end);
+        console.warn(`element fount at ${result} index`)
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>Recursive binary search, see developer console..</h1>
+    </div>
+
+</body>
+
+</html>

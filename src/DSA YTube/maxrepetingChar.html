@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max repeating charactor</title>
+</head>
+<script>
+    console.log("max repeating charactor in string");
+
+    function maxRepeatingChar(str) {
+        let maxKey = 0;
+        let objStr = {};
+        for (let i=0;i<str.length;i++){
+            let key=str[i];
+            if(!objStr[key]){
+                objStr[key]=0;
+            }
+            objStr[key]++;
+            if(maxKey=='' || objStr[key]>objStr[maxKey] ){
+                maxKey=key;
+            }
+           
+           
+        }
+        console.log(objStr);
+        return maxKey;
+    }
+    
+
+    let result=maxRepeatingChar('hellohh');
+    console.log(`maximun repeating charater is ${result}`);
+
+
+</script>
+
+<body>
+    <h1>Find max repeating charactor in given string</h1>
+    <h2>please open developr console to see output</h2>
+
+</body>
+
+</html>
