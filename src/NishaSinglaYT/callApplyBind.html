@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call apply bind</title>
+    <script>
+        console.log("call bind and apply method in JS");
+        const employee = {
+            firstName: "Pramod",
+            lastName: "Lohra",
+            // getFullName: function (city) {
+            //     // console.log(this);
+            //     console.log(` My name is ${this.firstName}  ${this.lastName} from ${city}`);
+
+            // }
+        }
+
+        const getFullName= function (city) {
+                // console.log(this);
+                console.log(` My name is ${this.firstName}  ${this.lastName} from ${city}`);
+
+            }
+
+        const customer = {
+            firstName: "keshav",
+            lastName: "kumar",
+            
+        }
+
+
+        // const getEmpDetails = employee.getFullName;
+        // getEmpDetails();
+        // employee.getFullName.call(customer);
+        // emoployee2.getFullName();
+
+
+        //call and apply diffrence
+        // employee.getFullName.call(employee,'Mumbai');
+        // employee.getFullName.apply(customer,['Delhi']);
+
+        getFullName.apply(employee,['mumbai']);
+
+        getFullName.call(customer,'Ranchi');
+
+ // bind- The bind() method returns a new function with the specified this value bound, without invoking it. This allows you to create a partially applied function with a fixed context for later execution
+ 
+        const handler=getFullName.bind(employee);
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Call apply and Bind 
+    </h1>
+    <p>call method are use to bind the context of this to object</p>
+
+    <p>apply method also use to bind the context of this to object, and it takes arguments as an array</p>
+
+    <p>bind method do the same , but bind method returns a new obj that can be used to later, bind method is mostly used with event handlers </p>
+
+</body>
+
+</html>
