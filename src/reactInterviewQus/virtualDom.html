@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react virtual dom</title>
+
+</head>
+
+<body>
+    <h1>React virtual dom work behind the scene</h1>
+    <div id="container1"></div>
+    <div id="container2"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+
+        console.log("virtual dom in react");
+        function setTimer() {
+            const element1 = `
+        <div>
+            <h1>JavaScript</h1>
+            <input type="text" placeholder="enter anything">
+            <p>${new Date().toLocaleTimeString()}<p/>
+            </div>`;
+
+            document.getElementById("container1").innerHTML = element1;
+
+            const element2 = React.createElement(
+                'div',
+                null,
+                React.createElement('h1', null, 'React'),
+                React.createElement('div', null,
+                    React.createElement('input', { type: 'text' }),
+                    React.createElement('p', null, new Date().toLocaleTimeString())
+                )
+            );
+
+            ReactDOM.render(element2, document.getElementById('container2'));
+
+        }
+
+        setInterval(setTimer, 1000);
+
+
+
+    </script>
+</body>
+
+</html>
