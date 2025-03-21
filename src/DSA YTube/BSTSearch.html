@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BST search</title>
+    <script>
+        console.log("Binary search tree in JS");
+
+
+        //Create a node of Binary search tree
+        class Node {
+            constructor(val) {
+                this.value = val;
+                this.left = null;
+                this.right = null;
+            }
+        }
+        class BSTree {
+            constructor() {
+                this.root = null;
+            }
+
+            //Method to check is tree has any node
+            isEmptyTree() {
+                return this.root === null;
+            }
+            //Create a instance of Node class for tree
+            makeTree(newNodeValue) {
+                const newNode = new Node(newNodeValue);
+                if (this.root === null) {
+                    this.root = newNode;
+                } else {
+                    console.log(this);
+                    this.insertNode(this.root, newNode);
+                }
+
+
+            }
+            insertNode(root, newNodeItem) {
+                if (root > newNodeItem) {
+                    if (root.left === null) {
+                        root.left = newNodeItem;
+                    } else {
+                        this.insertNode(root.left, newNodeItem);
+                    }
+                } else {
+                    if (root.right === null) {
+                        root.right = newNodeItem;
+                    } else {
+                        this.insertNode(root.right, newNodeItem);
+                    }
+                }
+            }
+        }
+
+        const bst = new BSTree();
+
+        bst.makeTree(30);
+        console.log(bst.isEmptyTree());
+        console.warn(bst);
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Binary search tree , search the if value is present at Tree</h1>
+
+</body>
+
+</html>

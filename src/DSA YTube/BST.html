@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BST</title>
+    <script>
+        console.log("Binary search tree impl in JS");
+        class Node {
+            constructor(nodeValue) {
+                this.value = nodeValue;
+                this.left = null;
+                this.right = null;
+
+            }
+        }
+        class BSTree {
+            constructor() {
+                this.root = null;
+            }
+
+            isEmptyTree() {
+                return this.root === null;
+
+            }
+            makeTree(val) {
+                const newNode = new Node(val);
+                if (this.root === null) {
+                    this.root = newNode;
+
+                } else {
+                    this.insertNode(this.root, newNode);
+                }
+
+            }
+            insertNode(root, newNode) {
+                if (root.value > newNode.value) {
+                    if (root.left === null) {
+                        root.left = newNode;
+                    } else {
+                        this.insertNode(root.left, newNode);
+                    }
+
+                } else {
+                    if (root.right === null) {
+                        root.right = newNode;
+                    } else {
+                        this.insertNode(root.right, newNode);
+                    }
+                }
+
+            }
+        }
+        const bst = new BSTree();
+
+        bst.makeTree(20);
+        bst.makeTree(30);
+        bst.makeTree(5);
+        bst.makeTree(15);
+        bst.makeTree(25);
+        console.log(bst.isEmptyTree());
+        console.log(bst);
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Binary search tree in javaScript</h1>
+
+</body>
+
+</html>

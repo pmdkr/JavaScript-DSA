@@ -1,55 +1,72 @@
-<html>
-    <head>
-        <style>
-            .selected{
+<!DOCTYPE html>
+<html lang="en">
 
-                background-color: blue;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure in Javascript</title>
+    <style>
+        .selected {
+
+            background-color: blue;
+        }
+
+        .item {
+            margin: 4px;
+            padding: 2px;
+            border: 2px solid black;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Closure in JavaScript</h1>
+    <p>Clouser, when a function remober its lexical scope after finish exection of the function, it is called Clusere in
+        JS</p>
+    <h1 id="count"></h1>
+    <ul>
+        <li class="item">Laptop</li>
+        <li class="item">Phone</li>
+        <li class="item">Chair </li>
+        <li class="item">Charger</li>
+        <li class="item">Bike</li>
+    </ul>
+
+    <script>
+        console.log("Closure in JS");
+
+        let products = document.getElementsByClassName("item");
+        console.log(products);
+
+        let cartCounter = (function () {
+            let count = 0;
+            return {
+                increment: () => count += 1,
+                decrement: () => count -= 1,
+                totalCount: () => count,
             }
-        </style>
-    </head>
-    <body>
-        <h1>Closure in JavaScript</h1>
-        <h1 id="count"></h1>
-        <ul>
-            <li class="item">Laptop</li>
-            <li class="item">Phone</li>
-            <li class="item">Chair </li>
-            <li class="item">Charger</li>
-            <li class="item">Bike</li>
-        </ul>
-    
-        <script>
-            console.log("Closure in JS");
-    
-            let products = document.getElementsByClassName("item");
-            console.log(products);
-    
-            let cartCounter = (function () {
-                let count = 0;
-                return {
-                    increment: () => count += 1,
-                    decrement: () => count -= 1,
-                    totalCount: () => count,
+        })();
+
+        for (let i = 0; i < products.length; i++) {
+            products[i].addEventListener("click", function () {
+                console.warn("item is clicked");
+
+                if (this.className.indexOf('selected') < 0) {
+                    this.className += ' selected';
+                    cartCounter.increment();
+                } else {
+                    this.className = this.className.replace(' selected', '');
+                    cartCounter.decrement();
                 }
-            })();
-    
-            for (let i = 0; i < products.length; i++) {
-                products[i].addEventListener("click", function () {
-                    console.warn("item is clicked");
-    
-                    if (this.className.indexOf('selected') < 0) {
-                        this.className += ' selected';
-                        cartCounter.increment();
-                    } else {
-                        this.className = this.className.replace(' selected', '');
-                        cartCounter.decrement();
-                    }
-    
-                    document.getElementById("count").innerText = `Total Count: ${cartCounter.totalCount()}`;
-                });
-            }
-        </script>
-    </body>
-    
+
+                document.getElementById("count").innerText = `Total Count: ${cartCounter.totalCount()}`;
+            });
+        }
+
+    </script>
+
+
+</body>
 
 </html>

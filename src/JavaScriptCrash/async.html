@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Async await in js");
+
+        const p1 = new Promise((resolve, reject) => {
+            resolve("p1 promise resolved");
+
+        })
+        const p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("p2 resolved ");
+            }, 10000)
+        })
+
+        function getData(p1) {
+            console.log("Namaste JavaScript");
+
+            p1.then(val => console.log(val));
+            p2.then(val => console.log(val));
+            console.warn("Namaste Javascript 2");
+        }
+        getData(p1)
+    </script>
+</head>
+
+<body>
+    <h1>Async await in javascript</h1>
+    <p>Async is a keyword , which is used to declare a fuction asyncronus, is always returned a Promise object</p>
+    <p>and await is alwys used with async keyword, both keyword are use to handle promises in ES6</p>
+    <p>Before async await , we handled the promises with "then " keyword </p>
+    <P>When a JS engine find a await keyword , it suspended the executeion of the function and do other task of a
+        program , and as this promises gets resloved, JS engine again load this function to callstack and start the
+        execution of that fuction where its was left the exection.</P>
+
+
+
+</body>
+
+</html>
